@@ -107,17 +107,17 @@ class ScoreDB( QWidget ) :
         pickle.dump( self.scoredb, fH )
         fH.close( )
 
-    def showScoreDB( self ) :
-        self.text.clear( )
-        self.DB = ""
-        key = str( self.Box.currentText( ) )
-        for p in sorted( self.scoredb, key=lambda person : person[key] ):
-            for attr in sorted( p ) :
-                self.DB += attr + "=" + str(p[attr]) + "\t"
-                if attr == "Score" :
-                    self.text.append( ( self.DB ) )
-            self.DB += "\n"
-        self.text.setText( self.DB )
+    #def showScoreDB( self ) :
+        #self.text.clear( )
+        #self.DB = ""
+        #key = str( self.Box.currentText( ) )
+        #for p in sorted( self.scoredb, key=lambda person : person[key] ):
+            #for attr in sorted( p ) :
+                #self.DB += attr + "=" + str(p[attr]) + "\t"
+                #if attr == "Score" :
+                    #self.text.append( ( self.DB ) )
+            #self.DB += "\n"
+        #self.text.setText( self.DB )
 
 
 
@@ -147,9 +147,8 @@ class ScoreDB( QWidget ) :
                 for i in range( len(self.scoredb) // 2 + 1 ) :
                     for p in self.scoredb :
                         while p['Name'] == name_Line :
-                            if p['Name'] == name_Line :
-                                self.scoredb.remove( p )
-                                break
+                            self.scoredb.remove( p )
+                            break
                 self.showScoreDB( )
         except :
             pass
