@@ -1,5 +1,17 @@
 UI의 구성은 PDF를 보며 작성했는데, 코드 리뷰를 해 본 결과 거의 모든 조원분들과 비슷한 형식으로 짜여 있었고 에러 없이 잘 작동되었다.
 
-
+    def readScoreDB( self ) :
+        try :
+            fH = open( self.dbfilename, 'rb' )
+        except FileNotFoundError as e :
+            self.scoredb = [ ]
+            return
+        try :
+            self.scoredb = pickle.load( fH )
+        except :
+            pass
+        else :
+            pass
+        fH.close( )
 
 이렇게 긴 코드를 직접 짜 본적이 처음이었기 때문에 오류가 나더라도 DB가 작동될 때 굉장히 뿌듯함을 느꼈다.
