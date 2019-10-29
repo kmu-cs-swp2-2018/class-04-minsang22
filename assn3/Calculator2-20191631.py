@@ -45,7 +45,8 @@ class Calculator(QWidget):
             'constants': {'buttons': constantList, 'layout': constLayout, 'columns': 1},
             'functions': {'buttons': functionList, 'layout': funcLayout, 'columns': 1},
         }
-
+        
+        #행/렬의 규칙 Calculrator1과 바꿈
         for label in buttonGroups.keys():
             r = 0; c = 0
             buttonPad = buttonGroups[label]
