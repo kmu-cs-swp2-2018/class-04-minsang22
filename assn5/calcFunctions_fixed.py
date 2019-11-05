@@ -94,19 +94,19 @@ def romanToDec(numStr):
     return str(result)
     
     '''
-    조원의견 1
+    조원의견 1 (앞에서 짠 함수를 이용 - 의존성 높음 ! )
     예를 들어 X가 4개 입력되고 이 버튼을 누를 시 40이라는 값이 리턴되기는 함.
     그러나 4의 올바른 로마자 표기법은 XL이므로
     최종값을 로마자로 변환하는 함수에 넣었을 때 XL가 리턴되어
     XXXX != XL가 되게 됨.
     그럴 경우 Error를 출력해줌 !
-    
+        
     if last != dectoRoman(total):
            return 'Error!'
     '''
     
     '''
-    조원의견 2
+    조원의견 2 (의존성을 줄이기 위해 앞에서 짠 함수 이용 x ! )
     def RomanToDec(numStr):
     try:
        # numStr.isalpha()  # 숫자로만 이뤄졌는지 확인하라
