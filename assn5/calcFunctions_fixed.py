@@ -73,7 +73,7 @@ def romanToDec(numStr):
         'I': 1
     }
 
-    for i in romans.keys():
+    for i in roman.keys():
         if not i in n:
             result = "로마숫자 아닌 값이 있음"
             return result
