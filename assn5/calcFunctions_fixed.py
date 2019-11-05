@@ -82,6 +82,7 @@ def romanToDec(numStr):
     while True:
         for i in roman.keys():
             if n.find(i) == 0:
+                #i의 위치값을 반환하는 find() 함수를 사용함!
                 result += roman[i]
                 if len(i) == 1:
                     n = n[1:]
@@ -89,6 +90,7 @@ def romanToDec(numStr):
                     n = n[2:]
         if n == '':
             break
+            #무한loop에 빠지지 않도록 break문 사용!
     return str(result)
 
 
