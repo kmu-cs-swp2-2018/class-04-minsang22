@@ -92,7 +92,57 @@ def romanToDec(numStr):
             break
             #무한loop에 빠지지 않도록 break문 사용!
     return str(result)
+    
+    '''
+    조원의견 1
+    예를 들어 I가 4개 입력되고 이 버튼을 누를 시 4라는 값이 리턴되기는 함.
+    그러나 4의 올바른 로마자 표기법은 IV이므로
+    최종값을 로마자로 변환하는 함수에 넣었을 때 IV가 리턴되어
+    IIII != IV가 되게 됨.
+    그럴 경우 Error를 출력해줌 !
+    
+    if last != dectoRoman(total):
+           return 'Error!'
+    '''
+    
+    '''
+    조원의견 2
+    def RomanToDec(numStr):
+    try:
+       # numStr.isalpha()  # 숫자로만 이뤄졌는지 확인하라
 
+        romans = {'M': 1000, 'CM': 900, 'D': 500, 'CD': 400,
+                 'C': 100, 'XC': 90, 'L': 50, 'XL': 40,
+                 'X': 10, 'IX': 9, 'V': 5, 'IV': 4,
+                 'I': 1,
+                 }
+        semi_result = []
+        sorted(romans.items())
+
+        half_num = ['M', 'C', 'X', 'I']
+        for letters, value in romans.items():
+            letters_cnt = 0  # 숫자의 중복도를 확인
+            while len(numStr) != 0:  # 문자열의 길이가 없어기 전까지 반복
+                if letters == numStr[0: len(letters)]:
+                    numStr = numStr.replace(letters, '', 1)
+                    letters_cnt += 1
+                    semi_result.append(value)
+                    if (letters not in half_num) and letters_cnt > 1:
+                        return 'Error!'
+                        # 1류를 제외하고 나머지는 'letters_cnt'가 2번 이상이면 안됨.
+                    if letters_cnt > 3:  # 1류는 3번이상 반복되면 안됨
+                        return 'Error!'
+                else:
+                    break
+        if len(numStr) != 0:
+            return 'Error!'
+        result = sum(semi_result)
+        return str(result)
+
+    except:
+        return 'Error!'
+    
+    '''
 
 
 
