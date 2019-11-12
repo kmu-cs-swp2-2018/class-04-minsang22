@@ -13,7 +13,7 @@ class Guess:
     def guess(self, character):
         self.guessedChars.append(character) #guessedChars에 사용한 단어를 넣는다
         TorF = False
-        if character in self.guessedChars: #guessedChars에 character가 없다면 포문을 실행한다
+        if character in self.guessedChars: #guessedChars에 character가 있다면 포문을 실행한다
             for i in range(len(self.secretWord)):
                 if character== self.secretWord[i]:
                     self.currentStatus = self.currentStatus[:i] + character + self.currentStatus[i+1:] #알맞은 자리에 character를 넣는다
