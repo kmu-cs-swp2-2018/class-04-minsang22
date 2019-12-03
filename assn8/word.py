@@ -43,7 +43,7 @@ class Word:
             word = line.rstrip()
             self.words.append(word)
             if len(word) > self.maxLength:
-                self.axLength = len(word)
+                self.maxLength = len(word)
             self.count += 1
 
         print('%d words in DB' % self.count)
