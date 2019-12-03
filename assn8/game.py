@@ -36,7 +36,8 @@ class HangmanGame(QWidget):
          # Display widget for current status
         self.currentWord = QLineEdit()
         self.currentWord.setReadOnly(True)
-
+        
+        # 화면에 표시되는 폭을 조절하는 방식 선택 / method 사용 x
         self.currentWord.setMaxLength(len(self.secretWord) * 2)
         self.currentWord.setAlignment(Qt.AlignCenter)
         font = self.currentWord.font()
