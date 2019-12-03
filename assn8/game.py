@@ -33,15 +33,16 @@ class HangmanGame(QWidget):
         # Status Layout creation
         statusLayout = QGridLayout()
 
-        # Display widget for current status
+         # Display widget for current status
         self.currentWord = QLineEdit()
         self.currentWord.setReadOnly(True)
+
+        self.currentWord.setMaxLength(len(self.secretWord) * 2)
         self.currentWord.setAlignment(Qt.AlignCenter)
         font = self.currentWord.font()
         font.setPointSize(font.pointSize() + 8)
         self.currentWord.setFont(font)
         statusLayout.addWidget(self.currentWord, 0, 0, 1, 2)
-
         # Display widget for already used characters
         self.guessedChars = QLineEdit()
         self.guessedChars.setReadOnly(True)
